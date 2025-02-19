@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <zephyr/kernel.h>
 #include <zephyr/net/openthread.h>
 #include <openthread/thread.h>
@@ -9,10 +10,12 @@
 #define TIMEOUT 1000
 
 int initialize_server() {
+    printk("Server initialization");
     return 0;
 }
 
 int initialize_client() {
+    printk("Client initialization");
     return 0;
 }
 

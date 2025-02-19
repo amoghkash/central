@@ -7,6 +7,7 @@ menu "Application Settings"
 
 config APP_NETWORKING
     bool "Networking"
+    default y
     help
         Enables networking within the system.
 
@@ -28,7 +29,7 @@ menu "Thread & CoAP Settings"
     config ENABLE_OT_SHELL
         bool "Enable CLI to interact with OpenThread"
         select CONFIG_OPENTHREAD_SHELL
-        
+
 endmenu
 
 endmenu
