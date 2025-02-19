@@ -1,0 +1,17 @@
+{
+    "files.associations": {
+        "dk_buttons_and_leds.h": "c",
+        "openthread.h": "c",
+        "kernel.h": "c",
+        "network.h": "c",
+        "zephyr.h": "c",
+        "internet": "c",
+        "socket": "c",
+        "functional": "c",
+        "devicetree.h": "c",
+        "coap.h": "c",
+        "peripherals.h": "c",
+        "errno.h": "c",
+        "errors.h": "c"
+    }
+}

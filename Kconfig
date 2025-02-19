@@ -1,0 +1,34 @@
+# SPDX-License-Identifier: Apache-2.0
+menu "Zephyr Kernel"
+    source "Kconfig.zephyr"
+endmenu
+
+menu "Application Settings"
+
+config APP_NETWORKING
+    bool "Networking"
+    help
+        Enables networking within the system.
+
+
+menu "Thread & CoAP Settings"
+    choice COAP_ROLE
+        prompt "Select Role"
+        default COAP_SERVER_ROLE
+        depends on APP_NETWORKING
+        help
+            Selects the role of device as a client or
+            server within the network.
+
+        config COAP_SERVER_ROLE
+            bool "COAP Server Role"
+        config COAP_CLIENT_ROLE
+            bool "COAP Client Role"
+    endchoice
+    config ENABLE_OT_SHELL
+        bool "Enable CLI to interact with OpenThread"
+        select CONFIG_OPENTHREAD_SHELL
+        
+endmenu
+
+endmenu
