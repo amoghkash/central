@@ -4,7 +4,8 @@
 extern "C" {
 #endif
 
-typedef enum messageType_t {
+
+typedef enum messageCategory_t {
     CONFIG,             // Configuration-related messages (e.g., network settings, parameters).
     ACK,                // Confirmation of receipt of a message.
     DATA,               // General data transmission messages.
@@ -22,13 +23,24 @@ typedef enum messageType_t {
     TELEMETRY,          // Messages carrying sensor or device status data.
     EVENT,              // Notifications of specific occurrences (e.g., motion detected).
     RESERVED            // Placeholder for future message types.
+} messageCategory;
+
+typedef enum messageType_t {
+    CONFIRMABLE     = 0, ///< Confirmable           - Requires an Acknowledgeable
+    NON_CONFIRMABLE = 1, ///< Non-confirmable       - Doesn't require an acknowledge
+    ACKNOWLEDGMENT  = 2, ///< Acknowledgment        - Message is an Acknowledgement
+    RESET           = 3, ///< Reset                 - Not sure what this is
 } messageType;
 
-typedef struct meshMessage {
-    messageType type;
+typedef struct meshMessage_t {
+    messageCategory type;
     char* message;
     int size;
-} meshMessage_t;
+} meshMessage;
+
+
+
+typedef void (*mesh_handler)(meshMessage* message);
 
 
 

@@ -15,6 +15,14 @@
         "errors.h": "c",
         "executor": "c",
         "io_context": "c",
-        "instance.h": "c"
+        "instance.h": "c",
+        "handler_ll.h": "c",
+        "types.h": "c",
+        "kernel_includes.h": "c",
+        "toolchain.h": "c",
+        "memory_resource": "c",
+        "string.h": "c",
+        "cstring": "c",
+        "typeinfo": "c"
     }
 }
