@@ -5,13 +5,10 @@ extern "C" {
 #endif
 
 
-int initialize_mesh();
-// int deitialize_mesh();
+int initialize_coap();
+// int deitialize_coap();
 
-// int mesh_connect();
-// int mesh_send();
-// int getMessages();
-// int mesh_disconnect();
+int addHandler(otCoapResource *resource);
 
 
 

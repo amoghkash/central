@@ -12,6 +12,9 @@
         "coap.h": "c",
         "peripherals.h": "c",
         "errno.h": "c",
-        "errors.h": "c"
+        "errors.h": "c",
+        "executor": "c",
+        "io_context": "c",
+        "instance.h": "c"
     }
 }

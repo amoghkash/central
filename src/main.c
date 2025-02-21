@@ -1,9 +1,9 @@
 #include <zephyr/kernel.h>
 #include <dk_buttons_and_leds.h>
-#include "ot/network.h"
+#include "ot/mesh.h"
 
 
 int main(void)
 {
-    initialize_mesh();
+    mesh_initialize();
 }
