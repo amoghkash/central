@@ -8,7 +8,7 @@ extern "C" {
 int initialize_coap();
 // int deitialize_coap();
 
-int addHandler(otCoapResource *resource);
+int addResourceHandler(otCoapResource *resource);
 
 
 

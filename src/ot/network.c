@@ -16,14 +16,16 @@ int initialize_coap() {
 
     error = otCoapStart(t_instance, OT_DEFAULT_COAP_PORT);
     if (error != OT_ERROR_NONE) {
+        printk("CoAP Initialization Fail: %d\n");
         return EOT_FAIL;
     }
 
-    otCoapAddResource(t_instance, NULL);
+    printk("CoAP Initialized Successfully\n");
+
     return 0;   
 }
 
-int addHandler(otCoapResource *resource) {
+int addResourceHandler(otCoapResource *resource) {
     if (resource == NULL) {
         return ENULLARG;
     }

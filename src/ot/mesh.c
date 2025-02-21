@@ -47,8 +47,6 @@ void coap_response_handler(void *t_context, otMessage *t_message, const otMessag
 
 
 
-
-
     if (messageType == CONFIRMABLE) {
         //response goes here
         return;
@@ -62,10 +60,11 @@ int mesh_initialize() {
         return ret;
     }
 
-    ret = addHandler(&main_handler);
+    ret = addResourceHandler(&main_handler);
     if (ret != 0) {
         return ret;
     }
+    printk("Main Handler was added successfully\n");
     // Default Function Handlers go here
     return 0;
 }
