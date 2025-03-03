@@ -33,7 +33,8 @@ typedef enum messageType_t {
 } messageType;
 
 typedef struct meshMessage_t {
-    messageCategory type;
+    messageCategory category;
+    messageType type;
     char* message;
     int size;
 } meshMessage;

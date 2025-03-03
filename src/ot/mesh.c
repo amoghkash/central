@@ -11,8 +11,6 @@
 #include "types.h"
 #include "handler.h"
 
-static void coap_response_handler(void *t_context, otMessage *t_message, const otMessageInfo *t_message_info);
-
 static otCoapResource main_handler = {
     .mUriPath = "mainhandler",
     .mHandler = coap_response_handler,
@@ -52,7 +50,6 @@ void coap_response_handler(void *t_context, otMessage *t_message, const otMessag
         return;
     }
 }
-
 
 int mesh_initialize() {
     int ret = initialize_coap();

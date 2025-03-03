@@ -12,6 +12,11 @@ extern "C" {
 
 #include "types.h"
 
+static void coap_response_handler(void *t_context, otMessage *t_message, const otMessageInfo *t_message_info);
+
+/**
+ * Initialize the mesh network.
+ */
 int mesh_initialize();
 
 // int mesh_connect();

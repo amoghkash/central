@@ -25,6 +25,21 @@ int initialize_coap() {
     return 0;   
 }
 
+int deinitialize_coap() {
+    otError error;
+    otInstance *t_instance = openthread_get_default_instance();
+
+    error = otCoapStop(t_instance);
+    if (error != OT_ERROR_NONE) {
+        printk("CoAP Initialization Fail: %d\n");
+        return EOT_FAIL;
+    }
+
+    printk("CoAP Initialized Successfully\n");
+
+    return 0;   
+}
+
 int addResourceHandler(otCoapResource *resource) {
     if (resource == NULL) {
         return ENULLARG;

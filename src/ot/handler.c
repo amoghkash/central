@@ -55,7 +55,6 @@ int handler_add(char* name, mesh_handler *callback) {
     return 0;
 }
 
-
 int ot_message_handle(meshMessage* messageToHandle) {
     if (messageToHandle == NULL) {
         return ENULLARG;
