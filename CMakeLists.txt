@@ -1,11 +1,20 @@
 cmake_minimum_required(VERSION 3.20.0)
-find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
 
+# Include Zephyr boilerplate
+find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
 project(central)
 
-target_sources(app PRIVATE src/main.c)
+# Add source files
+# target_sources(app PRIVATE
+#     src/main.c
+#     src/ot/mesh.c
+#     src/ot/handler.c
+#     src/utils/peripherals.c
+# )
 
-FILE(GLOB app_sources src/ot/*.c)
 target_include_directories(app PUBLIC src/system)
- 
-target_sources(app PRIVATE ${app_sources})
+target_include_directories(app PRIVATE src/include)
+
+file(GLOB_RECURSE SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/*.c")
+target_sources(app PRIVATE ${SOURCES})
+

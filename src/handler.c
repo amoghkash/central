@@ -6,7 +6,7 @@
 
 
 
-static handler_node* head;
+static handler_node* head = NULL;
 
 handler_node* create_hnode(char* name, mesh_handler *callback, handler_node* next) {
     if ((name == NULL) | (callback == NULL)) {
@@ -53,6 +53,22 @@ int handler_add(char* name, mesh_handler *callback) {
     }
 
     return 0;
+}
+
+void clear_handlers() {
+    if (head == NULL) {
+        return;
+    }
+
+    handler_node* curr = head;
+
+    while (curr != NULL) {
+        delete_hnode(curr);
+        curr = curr->next;
+    }
+
+    head = NULL;
+    return;
 }
 
 int ot_message_handle(meshMessage* messageToHandle) {

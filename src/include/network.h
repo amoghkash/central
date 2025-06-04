@@ -10,10 +10,11 @@ extern "C" {
  */
 int initialize_coap();
 
+
 /**
  * Deinitialize CoAP resources.
  */
-int deitialize_coap();
+int deinitialize_coap();
 
 /**
  * Add a resource handler to the CoAP server.

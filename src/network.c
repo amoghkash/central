@@ -16,7 +16,7 @@ int initialize_coap() {
 
     error = otCoapStart(t_instance, OT_DEFAULT_COAP_PORT);
     if (error != OT_ERROR_NONE) {
-        printk("CoAP Initialization Fail: %d\n");
+        printk("CoAP Initialization Fail: %d\n", error);
         return EOT_FAIL;
     }
 
@@ -31,7 +31,7 @@ int deinitialize_coap() {
 
     error = otCoapStop(t_instance);
     if (error != OT_ERROR_NONE) {
-        printk("CoAP Initialization Fail: %d\n");
+        printk("CoAP Initialization Fail: %d\n", error);
         return EOT_FAIL;
     }
 

@@ -23,6 +23,8 @@
         "memory_resource": "c",
         "string.h": "c",
         "cstring": "c",
-        "typeinfo": "c"
+        "typeinfo": "c",
+        "mesh.h": "c",
+        "thread.h": "c"
     }
 }
