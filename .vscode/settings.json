@@ -25,6 +25,10 @@
         "cstring": "c",
         "typeinfo": "c",
         "mesh.h": "c",
-        "thread.h": "c"
-    }
+        "thread.h": "c",
+        "memory": "c",
+        "future": "c",
+        "istream": "c"
+    },
+    "nrf-connect.applications": []
 }

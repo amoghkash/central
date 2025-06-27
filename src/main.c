@@ -1,17 +1,18 @@
-#include <stdio.h>
 #include <zephyr/kernel.h>
-#include "mesh.h"
-#include "peripherals.h"
-#include "types.h"
+#include <zephyr/logging/log.h>
+#include "coap_server.h"
+#include "coap_client.h"
+
+int server = 0;
 
 int main(void)
 {
-    testUTILS();
-    mesh_initialize();
-    meshPacket mptest;
-    mptest.category = BROADCAST;
-    mptest.type = NON_CONFIRMABLE;
-    mptest.message = "hi";
-    mptest.message_size = strlen("hi");
-    mesh_send(&mptest); 
+    if (server) {
+        printk("Starting CoAP Server\n");
+        start_coap_server();
+    } else {
+        printk("Starting CoAP Client\n");
+        send_coap_request("2001:db8::1", "hello");
+    }
+    return 0;
 }

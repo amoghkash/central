@@ -12,7 +12,6 @@ project(central)
 #     src/utils/peripherals.c
 # )
 
-target_include_directories(app PUBLIC src/system)
 target_include_directories(app PRIVATE src/include)
 
 file(GLOB_RECURSE SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/*.c")
